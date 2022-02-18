@@ -1,4 +1,4 @@
-package com.hamitmizrak.entity;
+package com.hamitmizrak.data.entity;
 
 import com.hamitmizrak.audit.BaseEntityAudit;
 import lombok.AllArgsConstructor;
