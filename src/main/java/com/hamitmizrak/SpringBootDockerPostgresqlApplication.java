@@ -26,19 +26,17 @@ public class SpringBootDockerPostgresqlApplication  implements CommandLineRunner
     }
 
 
+    //sistem başladığında database veri eklemesi için
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
 
     @Override
     public void run(String... args) throws Exception {
         String sql = "INSERT INTO product (product_name, product_trade) VALUES ("
                 + "'Ürün adı', 'bilgisayar')";
-
         int rows = jdbcTemplate.update(sql);
         if (rows > 0) {
-            System.out.println("A new row has been inserted.");
+            log.info("Product tablosuna ekleme tamamdır");
         }
     }
-
 }

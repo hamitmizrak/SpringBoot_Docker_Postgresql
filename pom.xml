@@ -27,20 +27,6 @@
     </properties>
 
     <dependencies>
-        <!-- model mapper -->
-        <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>2.4.4</version>
-        </dependency>
-
-        <!-- swagger open-api-3.0-->
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.5</version>
-        </dependency>
-
         <!--jpa-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,6 +40,13 @@
                <scope>runtime</scope>
            </dependency>-->
 
+        <!-- mysql-->
+        <!--   <dependency>
+               <groupId>mysql</groupId>
+               <artifactId>mysql-connector-java</artifactId>
+               <scope>runtime</scope>
+           </dependency>-->
+
         <!--postgresql-->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -61,11 +54,25 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!--   <dependency>
-               <groupId>org.springframework.boot</groupId>
-               <artifactId>spring-boot-starter-jdbc</artifactId>
-           </dependency>-->
+        <!-- proje basladiginda hazir data olsun-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
 
+        <!-- model mapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+
+        <!-- swagger open-api-3.0-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.5</version>
+        </dependency>
 
         <!--thymeleaf-->
         <dependency>
@@ -136,6 +143,12 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
@@ -147,12 +160,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-            </plugin>
         </plugins>
     </build>
-
 </project>

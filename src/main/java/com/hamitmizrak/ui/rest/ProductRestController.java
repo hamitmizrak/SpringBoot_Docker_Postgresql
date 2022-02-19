@@ -53,5 +53,4 @@ public class ProductRestController {
         productRepository.delete(productEntity);
         return ResponseEntity.ok().build();
     }
-
 }
