@@ -19,12 +19,12 @@ public class ProductRestController {
     // http://localhost:8080/docker/v1/create/product
     @PostMapping("/create/product")
     public ResponseEntity<ProductEntity>  addProduct(@RequestBody ProductEntity productEntity){
-       return ResponseEntity.ok(productRepository.save(productEntity);
+       return ResponseEntity.ok(productRepository.save(productEntity));
     }
 
     //LISTELE
     // http://localhost:8080/docker/v1/list/product
-    @PostMapping("/list/product")
+    @GetMapping("/list/product")
     public ResponseEntity<List<ProductEntity>> findAll() {
         return ResponseEntity.ok(productRepository.findAll());
     }
@@ -43,15 +43,15 @@ public class ProductRestController {
 
 
     //DELETE
-    // http://localhost:8080/docker/v1/find/product/1
+    // http://localhost:8080/docker/v1/delete/product/1
     @DeleteMapping("/delete/product/{id}")
-    public Response<Void> deleteProduct(@PathVariable("id") Long id){
+    public ResponseEntity<Void> deleteProduct(@PathVariable("id") Long id){
         ProductEntity productEntity=productRepository.findById(id)
                 .orElseThrow(
                         ()->new ResourceNotFoundException(id+"  product id bulunamadı")
                 );
         productRepository.delete(productEntity);
-        return ResponseEntity.ok().body();
+        return ResponseEntity.ok().build();
     }
 
 }

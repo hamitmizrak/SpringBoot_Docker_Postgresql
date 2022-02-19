@@ -1,8 +1,6 @@
 package com.hamitmizrak.audit;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,7 +15,6 @@ import java.util.Date;
 
 @Data
 @Log4j2
-
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
